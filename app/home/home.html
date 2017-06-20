@@ -1,0 +1,78 @@
+
+<div ng-if="vm.auth.isAuthenticated()"  md-theme="{{theme}}" class="container">
+<div ng-if="i == 0" class="loading">
+  <img src="assets/loading.svg" alt="loading">
+  </div>
+  <div ng-if="i == 1">
+ <md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" >
+      <md-card md-theme="{{ showDarkTheme ? 'default' : 'cyan'}}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Orders</span>
+            <span class="md-subhead">Total number of orders placed</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"><img src="assets/orders.svg" width="112px" height="112px"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="showAdvanced($event)">More Stats</md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card md-theme="{{ showDarkTheme ? 'default' : 'dark-grey' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Money</span>
+            <span class="md-subhead"><strong>USERS BILLED</strong><br> Today: {{ usersBilledTodCount}}&emsp;Yesterday: {{ usersBilledYestCount}}  </span>
+            <span class="md-subhead"><strong>TOTAL REVENUE GENERATED</strong><br> Today: Rs.{{ usersBilledTodAmount }}&emsp;Yesterday: Rs.{{ usersBilledYestAmount }}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"><img src="assets/money.svg" width="112px" height="112px"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+         <md-button>More Stats</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+    <div flex-xs flex-gt-xs="50" >
+      <md-card md-theme="{{ showDarkTheme ? 'default' : 'dark-grey'}}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Profit</span>
+            <span class="md-subhead">Money flowing into my account</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"><img src="assets/profits.svg" width="112px" height="112px"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button>More Stats</md-button>
+        </md-card-actions>
+      </md-card>
+      <md-card md-theme="{{ showDarkTheme ? 'default' : 'cyan' }}" md-theme-watch>
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">Users</span>
+            <span class="md-subhead"><strong>USERS ADDED</strong><br> Today: {{ countUsers1}}&emsp;Yesterday: {{ countUsers2}}  </span>
+            <span class="md-subhead"><strong>USERS RECHARGED</strong><br> Today: {{ usersRechargedTod }}&emsp;Yesterday: {{ usersRechargedYest }}</span>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"><img src="assets/users.svg" width="112px" height="112px"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="primary" ng-click="showTabDialog($event)">More Stats</md-button>
+        </md-card-actions>
+      </md-card>
+    </div>
+  </md-content>
+  </div>
+  </div>
+
+<div class="container" ng-if="!vm.auth.isAuthenticated()">
+<h4>
+  You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
+</h4>
+</div>

@@ -1,0 +1,30 @@
+ITEM:
+
+
+
+ORDER:
+
+
+
+
+MONEY:
+
+
+
+
+PROFIT:
+
+
+
+
+
+USERS:
+New users on curr day:  SELECT * FROM user WHERE created_at >= CURDATE()+' 00:00:00';
+New users on prev day: SELECT * FROM user WHERE created_at <= CURDATE() +'00:00:00' AND created_at >= CURDATE()-1 +'00:00:00'; 
+
+Users recharged on that day : 
+SELECT COUNT(DISTINCT(user))
+FROM billing_master
+WHERE is_current=0 AND payment_type !='tXtATQFJu1' AND payment_type !='GrG4RJBy3' AND created_at>=CURDATE() +' 00:00:00';
+
+

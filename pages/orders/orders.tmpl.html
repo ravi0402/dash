@@ -1,0 +1,84 @@
+<!-- <md-dialog aria-label="Mango (Fruit)">
+  <form ng-cloak>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Order Stats</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+      <div class="md-dialog-content">
+      <h4>Users Added</h4>
+        <canvas id="doughnut" class="chart chart-doughnut"
+                chart-data="user_added_data" chart-labels="user_added_labels" >
+              </canvas>
+<br>
+<br>
+  <h4>Users Recharged</h4>
+  <canvas id="doughnut" class="chart chart-doughnut"
+              chart-data="user_rech_data" chart-labels="user_rech_labels" >
+            </canvas> 
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer('not useful')">
+       Not Useful
+      </md-button>
+      <md-button ng-click="answer('useful')" class="md-primary">
+        Useful
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+
+ -->
+
+
+<md-dialog aria-label="Mango (Fruit)">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>User Stats</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="width: 370px; height:370px;">
+      <md-tabs md-dynamic-height md-border-bottom>
+        <md-tab label="Users Added">
+          <md-content class="md-padding">
+            
+              <canvas id="doughnut" class="chart chart-doughnut"
+                chart-data="user_added_data" chart-labels="user_added_labels" >
+              </canvas>
+          </md-content>
+        </md-tab>
+        <md-tab label="Users Recharged">
+          <md-content class="md-padding">
+            <canvas id="doughnut" class="chart chart-doughnut"
+              chart-data="user_rech_data" chart-labels="user_rech_labels" >
+            </canvas> 
+          </md-content>
+        </md-tab>
+      </md-tabs>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="answer('not useful')" >
+        Not Useful
+      </md-button>
+      <md-button ng-click="answer('useful')" >
+        Useful
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

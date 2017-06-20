@@ -1,0 +1,32 @@
+{
+  "name": "DN-dashboard ",
+  "version": "0.0.0",
+  "description": "DN Dashboard",
+  "main": "server.js",
+  "scripts": {
+    "init": "npm install",
+    "install": "bower install"
+  },
+  "author": "Ravi Sharnagat",
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.4",
+    "angular": "^1.6.1",
+    "angular-auth0": "^2.0.0-beta.2",
+    "auth0-js": "^8.6.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "~1.17.1",
+    "bootstrap": "^3.3.7",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.3",
+    "express": "^4.14.0",
+    "jade": "~1.11.0",
+    "mongoose": "^4.10.5",
+    "morgan": "~1.8.1",
+    "mysql": "^2.13.0",
+    "nodemon": "^1.11.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
