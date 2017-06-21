@@ -51,11 +51,11 @@
         </md-button>
       </div>
     </md-toolbar>
-    <md-dialog-content style="width: 370px; height:370px;">
+    <md-dialog-content style="max-width:800px;max-height:810px; ">
       <md-tabs md-dynamic-height md-border-bottom>
         <md-tab label="Users Added">
           <md-content class="md-padding">
-            
+            <h3 class="md-display-2">Users Added</h3>
               <canvas id="doughnut" class="chart chart-doughnut"
                 chart-data="user_added_data" chart-labels="user_added_labels" >
               </canvas>
@@ -63,6 +63,7 @@
         </md-tab>
         <md-tab label="Users Recharged">
           <md-content class="md-padding">
+          <h3 class="md-display-2">Users Recharged</h3>
             <canvas id="doughnut" class="chart chart-doughnut"
               chart-data="user_rech_data" chart-labels="user_rech_labels" >
             </canvas> 
@@ -73,6 +74,9 @@
 
     <md-dialog-actions layout="row">
       <span flex></span>
+       <md-button target="_blank" md-autofocus>
+        More on Wikipedia
+      </md-button>
       <md-button ng-click="answer('not useful')" >
         Not Useful
       </md-button>

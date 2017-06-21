@@ -1,5 +1,5 @@
 
-<div ng-if="vm.auth.isAuthenticated()"  md-theme="{{theme}}" class="container">
+<div ng-if="vm.auth.isAuthenticated()" id="pop" md-theme="{{theme}}" class="container">
 <div ng-if="i == 0" class="loading">
   <img src="assets/loading.svg" alt="loading">
   </div>
@@ -10,7 +10,8 @@
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Orders</span>
-            <span class="md-subhead">Total number of orders placed</span>
+            <span class="md-subhead"><strong>ORDERS PLACED</strong><br> Today: {{ totalOrdersTod}}&emsp;Yesterday: {{ totalOrdersYest}}  </span>
+            <span class="md-subhead"><strong>NON-MILK ORDERS</strong><br> Today: &emsp;Yesterday: </span>
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-md card-media"><img src="assets/orders.svg" width="112px" height="112px"></div>
@@ -24,8 +25,8 @@
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Money</span>
-            <span class="md-subhead"><strong>USERS BILLED</strong><br> Today: {{ usersBilledTodCount}}&emsp;Yesterday: {{ usersBilledYestCount}}  </span>
-            <span class="md-subhead"><strong>TOTAL REVENUE GENERATED</strong><br> Today: Rs.{{ usersBilledTodAmount }}&emsp;Yesterday: Rs.{{ usersBilledYestAmount }}</span>
+            <span class="md-subhead"><strong>TOTAL SALES</strong><br> Today: Rs.{{ totalAmountAnalyticsTod }}&emsp;Yesterday: Rs.{{ totalAmountAnalyticsYest }}</span>
+             <span class="md-subhead"><strong>NON-MILK SALES</strong><br> Today: Rs.{{ nonmilkRevenueTod }}&emsp;Yesterday: Rs.{{ nonmilkRevenueYest }}</span>
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-md card-media"><img src="assets/money.svg" width="112px" height="112px"></div>
@@ -40,8 +41,9 @@
       <md-card md-theme="{{ showDarkTheme ? 'default' : 'dark-grey'}}" md-theme-watch>
         <md-card-title>
           <md-card-title-text>
-            <span class="md-headline">Profit</span>
-            <span class="md-subhead">Money flowing into my account</span>
+            <span class="md-headline">Downloads/Subscriptions</span>
+            <span class="md-subhead"><strong>DOWNLOADS</strong><br> Today: {{ downloadsTod }}&emsp;Yesterday: {{ downloadsYest }}</span>
+            <span class="md-subhead"><strong>SUBSCRIPTIONS</strong><br> Today: {{ subscriptionsTod }}&emsp;Yesterday: {{ subscriptionsYest }}</span>
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-md card-media"><img src="assets/profits.svg" width="112px" height="112px"></div>
@@ -55,8 +57,9 @@
         <md-card-title>
           <md-card-title-text>
             <span class="md-headline">Users</span>
-            <span class="md-subhead"><strong>USERS ADDED</strong><br> Today: {{ countUsers1}}&emsp;Yesterday: {{ countUsers2}}  </span>
-            <span class="md-subhead"><strong>USERS RECHARGED</strong><br> Today: {{ usersRechargedTod }}&emsp;Yesterday: {{ usersRechargedYest }}</span>
+            <span class="md-subhead"><strong>NEW USERS ADDED</strong><br> Today: {{ countUsers1}}&emsp;Yesterday: {{ countUsers2}}  </span>
+            <span class="md-subhead"><strong>USERS BILLED</strong><br> Today: {{ totalUserTod}}&emsp;Yesterday: {{ totalUserYest}}  </span>
+            <!-- <span class="md-subhead"><strong>USERS RECHARGED</strong><br> Today: {{ usersRechargedTod }}&emsp;Yesterday: {{ usersRechargedYest }}</span> -->
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-md card-media"><img src="assets/users.svg" width="112px" height="112px"></div>
@@ -76,3 +79,22 @@
   You are not logged in! Please <a ng-click="vm.auth.login()">Log In</a> to continue.
 </h4>
 </div>
+
+<!-- .dialogdemoBasicUsage #popupContainer {
+  position: relative; }
+
+.dialogdemoBasicUsage .footer {
+  width: 100%;
+  text-align: center;
+  margin-left: 20px; }
+
+.dialogdemoBasicUsage .footer, .dialogdemoBasicUsage .footer > code {
+  font-size: 0.8em;
+  margin-top: 50px; }
+
+.dialogdemoBasicUsage button {
+  width: 200px; }
+
+.dialogdemoBasicUsage div#status {
+  color: #c60008; }
+ -->
